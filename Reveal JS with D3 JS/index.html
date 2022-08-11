@@ -37,7 +37,8 @@
 				margin-bottom: 10px;
 			}
 
-			.page-setup__text .code {
+			.page-setup__text .code,
+			.page-components__text .code {
 				color: rgb(216, 95, 95);
 				font-style: italic;
 			}
@@ -48,6 +49,27 @@
 
 			.page-components__list .page-components__list-item {
 				margin-bottom: 20px;
+			}
+
+			.page-selection .page-selection__wrapper {
+				overflow: hidden;
+				height: 400px;				
+			}
+
+			.page-selection__title .page-selection__brackets {
+				font: 1.5em sans-serif;
+				margin-top: -10px;
+				font-weight: bold;
+			}
+
+			.page-selection__title .page-selection__brackets-all {
+				font: 1.0em sans-serif;
+				margin-top: -10px;
+				font-weight: bold;
+			}
+
+			.page-selection .page-selection__title-all {
+				font-size: 50px;
 			}
 		</style>
 </head>
@@ -140,11 +162,37 @@
 				</section>
 
 				<section class="page__components page-components">
-					<h2 class="page-components__title">Select</h2>
+					<h2 class="page-components__title">D3 Selections</h2>
 					<p class="page-components__text">
-						
+						Selection is the beginning of most D3 method chains as it dictates which elements will be affected by later methods. There are two methods for selection in D3.js, <span class="code">select()</span> and <span class="code">selectAll()</span>.
 					</p>					
 				</section>
+
+				<section class="page__selection page-selection">
+					<h2 class="page-selection__title"><span>Select</span><span class="page-selection__brackets">()</span></h2>
+					<p class="page-selection__text">
+						The select() method is used to select a single instance of a given HTML tag. If multiple instances of the selected tag are present, then it will select the first element only.
+					</p>
+					<div class="page-selection__wrapper">
+						<div class="page-selection__image">
+							<img class="page-selection__gif" src="./assets/select.gif">
+						</div>
+					</div>
+				</section>
+
+
+					<section class="page__selection page-selection">
+						<h2 class="page-selection__title"><span class="page-selection__title-all">SelectAll</span><span class="page-selection__brackets-all">()</span></h2>
+						<p class="page-selection__text">
+							The other method for selection is selectAll() which allows you to select multiple instances of an HTML tag. If multiple instances are present, it will select all of them. If the tag is not present, it will return an empty selection.
+						</p>
+						<div class="page-selection__wrapper">
+							<div class="page-selection__image">
+								<img class="page-selection__gif" src="./assets/selectAll.gif">
+							</div>
+						</div>															
+					</section>
+			
 
 				<section class="page__example page-example" id="sect2">
 					<h2 class="page-example__title">EXAMPLE</h2>
@@ -178,7 +226,7 @@
 
 			var bar = chart.selectAll("g")
 			    .data(data)
-			  .enter().append("g")
+			  	.enter().append("g")
 			    .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
 
 			bar.append("rect")
