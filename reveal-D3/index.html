@@ -53,10 +53,20 @@
 
 			.page-selection .page-selection__wrapper {
 				overflow: hidden;
-				height: 400px;				
+				height: 500px;				
 			}
 
 			.page-selection__title .page-selection__brackets {
+				font: 1.5em sans-serif;
+				margin-top: -10px;
+				font-weight: bold;
+			}
+
+			.page-selection .page-selection__title  {
+				margin-top: -70px;
+			}
+
+			.page-text .page-text__brackets {
 				font: 1.5em sans-serif;
 				margin-top: -10px;
 				font-weight: bold;
@@ -73,11 +83,44 @@
 			}
 
 			.page-text__img .page-text__img-text {
-				width: 90%;
+				width: 100%;
 			}
 
 			.page-text .page-text__title {
 				font-size: 55px;
+			}
+
+			.page-text .page-text__text {
+				font: 1.0em sans-serif;
+			}
+
+			.page-selection__wrapper .page-selection__image .page-selection__gif {
+				width:79.5%;
+			}
+
+			.page-selection .page-selection__wrapper {
+				width: 960px;
+    margin-left: -20px;
+			}
+
+			.page-text .page-text__img-wrapper {
+				overflow: hidden;
+				width: 820px;
+				height: 512px;
+				margin: 0 auto;
+			}
+
+			.page-text .page-text__title {
+				margin-top: -50px;
+			}
+
+			.page-dom .page-dom__list {
+				text-align: start;
+			}
+
+			#list {
+				display: flex;
+				flex-direction: column;
 			}
 		</style>
 </head>
@@ -105,6 +148,14 @@
 					<h2 class="page-about__title">What it is?</h2>
 					<p class="page-about__text">D3.js visualizations are created entirely using JavaScript. This allows frontend developers to add advanced data visualization to their UIs without the hassle of learning a new language. <br> Many advanced data manipulation and visualization functions are built-in and implemented, meaning that a new D3.js user can create effects that would otherwise require years of experience.
                                       For example, D3.js features built-in graph styles for anything from a simple pie chart to an interactive circular barplot.</p>					
+				</section>
+
+				<section class="page__about page-about">
+					<div class="page-about__example" style="transform: scale(1.2);"><img src="./assets/ex1.gif"></div>
+				</section>
+
+				<section class="page__about page-about">
+					<div class="page-about__example" style="transform: scale(1.2);"><img src="./assets/ex2.gif"></div>
 				</section>
 
 				<section class="page__help page-help">
@@ -201,20 +252,59 @@
 						</div>															
 					</section>
 
-
-					<section class="page__dom page-dom">
-						<h2 class="page-dom__title">DOM Manipulation with D3</h2>
-						<p class="page-dom__text">
-							Now we’ll take a look at the most common DOM manipulation methods, text(), append(), remove(), style(), and attr().
-						</p>																				
+					<section class="page__components page-components">
+						<h2 class="page-components__title">DOM Manipulation with D3</h2> 
+						<div class="page-components__discribtion">Now we’ll take a look at the most common DOM manipulation methods</div>		
+						<p class="page-components__text">
+							<ul class="page-components__list" id="list">
+								<li class="page-components__list-item">text()</li>
+								<li class="page-components__list-item">append()</li>
+								<li class="page-components__list-item">remove()</li>
+								<li class="page-components__list-item">style()</li>
+								<li class="page-components__list-item">attr()</li>
+							</ul>
+						</p>					
 					</section>
+					
 
 					<section class="page__text page-text">
-						<h2 class="page-text__title">text()</h2>
+						<h2 class="page-text__title"><span>text</span><span class="page-text__brackets">()</span></h2>
 						<p class="page-text__text">
 							The text() method manipulates DOM elements and is generally used to add or modify the text inside DOM elements. We first use the select() method to select div elements. Then we use the text() method to add our text to the div element.
 						</p>
 						<div class="page-text__img"><img class="page-text__img-text" src="./assets/text.png" alt=""></div>
+					</section>
+
+					<section class="page__text page-text">
+						<h2 class="page-text__title"><span>append</span><span class="page-text__brackets">()</span></h2>
+						<p class="page-text__text">
+							The append() method is used to add new a new HTML element the selected element. We use the append() method to add a new p element in div element. Then, we have added the text, “Bye” using the text() method.
+						</p>
+						<div class="page-text__img-wrapper"><div class="page-text__img"><img class="page-text__img-text" src="./assets/append.gif" alt=""></div></div>
+					</section>
+
+					<section class="page__text page-text">
+						<h2 class="page-text__title"><span>remove</span><span class="page-text__brackets">()</span></h2>
+						<p class="page-text__text">
+							The remove() method is used to remove a selected HTML element. The select() method selects the first div element. Then, we use the remove() method to remove the selected element. By the end, only the second div element is shown.
+						</p>
+						<div class="page-text__img-wrapper"><div class="page-text__img"><img class="page-text__img-text" src="./assets/remove.gif" alt=""></div></div>
+					</section>
+
+					<section class="page__text page-text">
+						<h2 class="page-text__title"><span>style</span><span class="page-text__brackets">()</span></h2>
+						<p class="page-text__text">
+							D3.js provides the style() method to set the style of selected DOM elements. Style is set in a format similar to CSS but can only change one attribute at a time. The first parameter of style is always the attribute you want to edit and the second parameter is the new value. style() method can only change a single attribute
+						</p>
+						<div class="page-text__img-wrapper"><div class="page-text__img"><img class="page-text__img-text" src="./assets/style.JPG" alt=""></div></div>
+					</section>
+
+					<section class="page__text page-text">
+						<h2 class="page-text__title"><span>attr</span><span class="page-text__brackets">()</span></h2>
+						<p class="page-text__text">
+							Instead of calling style() twice, we can call attr() once. The attr() method links your element to a CSS style sheet and applies the sheet’s settings to any selected elements. It is also used to define the attributes of a geometric figure.
+						</p>
+						<div class="page-text__img-wrapper"><div class="page-text__img"><img class="page-text__img-text" src="./assets/attr.gif" alt=""></div></div>
 					</section>
 
 			

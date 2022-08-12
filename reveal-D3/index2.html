@@ -3,12 +3,19 @@
 <head>
 		<meta charset="utf-8">
 		<title>D3.js</title>
-		<script src="https://d3js.org/d3.v6.min.js"></script>		
+		<script src="https://d3js.org/d3.v6.min.js">			
+		</script>
+		<style>
+			.title {
+				color: brown;
+				font-size: 40px;
+			}
+		</style>		
 </head>
 <body>
-  <div></div>
+  <div>Hello world!</div>	
     <script type="text/javascript">
-    d3.select('div').text('Hello World!!!')     
+		d3.select('div').attr('class', 'title')	-		    
 		</script>
 </body>
 </html>
