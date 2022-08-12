@@ -71,6 +71,14 @@
 			.page-selection .page-selection__title-all {
 				font-size: 50px;
 			}
+
+			.page-text__img .page-text__img-text {
+				width: 90%;
+			}
+
+			.page-text .page-text__title {
+				font-size: 55px;
+			}
 		</style>
 </head>
 <body class="pages">
@@ -184,7 +192,7 @@
 					<section class="page__selection page-selection">
 						<h2 class="page-selection__title"><span class="page-selection__title-all">SelectAll</span><span class="page-selection__brackets-all">()</span></h2>
 						<p class="page-selection__text">
-							The other method for selection is selectAll() which allows you to select multiple instances of an HTML tag. If multiple instances are present, it will select all of them. If the tag is not present, it will return an empty selection.
+							The other method for selection is selectAll() which allows you to select multiple instances of an HTML tag. If multiple instances are present, it will select all of them. First, we select all text under the div tag using the selectAll() method. Then, we then use the style() method to add style to selected text.
 						</p>
 						<div class="page-selection__wrapper">
 							<div class="page-selection__image">
@@ -192,6 +200,23 @@
 							</div>
 						</div>															
 					</section>
+
+
+					<section class="page__dom page-dom">
+						<h2 class="page-dom__title">DOM Manipulation with D3</h2>
+						<p class="page-dom__text">
+							Now we’ll take a look at the most common DOM manipulation methods, text(), append(), remove(), style(), and attr().
+						</p>																				
+					</section>
+
+					<section class="page__text page-text">
+						<h2 class="page-text__title">text()</h2>
+						<p class="page-text__text">
+							The text() method manipulates DOM elements and is generally used to add or modify the text inside DOM elements. We first use the select() method to select div elements. Then we use the text() method to add our text to the div element.
+						</p>
+						<div class="page-text__img"><img class="page-text__img-text" src="./assets/text.png" alt=""></div>
+					</section>
+
 			
 
 				<section class="page__example page-example" id="sect2">
