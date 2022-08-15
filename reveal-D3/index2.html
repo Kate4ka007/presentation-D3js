@@ -6,16 +6,17 @@
 		<script src="https://d3js.org/d3.v6.min.js">			
 		</script>
 		<style>
-			.title {
-				color: brown;
-				font-size: 40px;
-			}
 		</style>		
 </head>
 <body>
-  <div>Hello world!</div>	
     <script type="text/javascript">
-		d3.select('div').attr('class', 'title')	-		    
+			const width = 400;
+			const height = 200;
+
+			d3.select('body')
+				.append('svg')
+				.attr('width', width)
+				.attr('height', height)
 		</script>
 </body>
 </html>

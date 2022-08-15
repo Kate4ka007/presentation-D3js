@@ -5,8 +5,10 @@
 		<title>Reveal.js with D3 JS</title>
 		<link rel="stylesheet" href="css/reveal.min.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
 		<style>
-			@import url(https://fonts.googleapis.com/css?family=League+Gothic:regular);
 			.chart rect {
 			  fill: #63b6db;
 			}
@@ -58,7 +60,7 @@
 			}
 
 			.page-selection__title .page-selection__brackets {
-				font: 1.5em sans-serif;
+				font-family: sans-serif;
 				margin-top: -10px;
 				font-weight: bold;
 			}
@@ -73,12 +75,6 @@
 				font-weight: bold;
 			}
 
-			.page-selection__title .page-selection__brackets-all {
-				font: 1.0em sans-serif;
-				margin-top: -10px;
-				font-weight: bold;
-			}
-
 			.page-selection .page-selection__title-all {
 				font-size: 50px;
 			}
@@ -87,28 +83,17 @@
 				width: 100%;
 			}
 
-			.page-text .page-text__title {
-				font-size: 55px;
-			}
-
 			.page-text .page-text__text {
 				font: 1.0em sans-serif;
 			}
 
 			.page-selection__wrapper .page-selection__image .page-selection__gif {
-				width:79.5%;
+				width:100%;
 			}
 
 			.page-selection .page-selection__wrapper {
 				width: 960px;
     margin-left: -20px;
-			}
-
-			.page-text .page-text__img-wrapper {
-				overflow: hidden;
-				width: 820px;
-				height: 512px;
-				margin: 0 auto;
 			}
 
 			.page-text .page-text__title {
@@ -122,33 +107,37 @@
 			#list {
 				display: flex;
 				flex-direction: column;
+				margin-left: 8rem;
+    		margin-top: 3rem;
+			}
+
+			.text-bar {
+				color: white;
+				font: 1.5rem sans-serif;
 			}
 		</style>
 </head>
 <body class="pages">
 		<div class="reveal">
 			<div class="slides">
-				<section class="pages__title title">
-					<h2>Barebones Presentation</h2>
-					<p>This example contains the bare minimum includes and markup required to run a reveal.js presentation.</p>
-					<svg class="chart"></svg>
-				</section>
+				
 
 				<section class="page__start page-start">
-					<h2 class="page-start__title">D3.js (Data-Driven-Documents)</h2>
+					<h2 class="page-start__title">D3.js<br>(Data-Driven-Documents)</h2>
 					<p class="page-start__d3"><img class="page-start__image" src="./assets/d3.gif"></p>
-					<!-- <svg class="chart2"></svg> -->
 				</section>
 
 				<section class="page__about page-about">
 					<h2 class="page-about__title">What it is?</h2>
-					<p class="page-about__text">D3.js (Data-Driven-Documents) is an open-source JavaScript library that lets you create dynamic data visualizations in web browsers using SVC, HTML 5, and CSS. It was created by Mike Bostock in 2011 as a spiritual successor to Protovis. D3.js specializes in representing large data sets in a digestible and interactive means.</p>					
+					<p class="page-about__text">D3.js (Data-Driven-Documents) is an open-source JavaScript library that lets you create dynamic data visualizations in web browsers using SVG, HTML 5, and CSS. D3.js specializes in presenting large datasets in a user-friendly and interactive way.</p>					
 				</section>
 
 				<section class="page__about page-about">
 					<h2 class="page-about__title">What it is?</h2>
-					<p class="page-about__text">D3.js visualizations are created entirely using JavaScript. This allows frontend developers to add advanced data visualization to their UIs without the hassle of learning a new language. <br> Many advanced data manipulation and visualization functions are built-in and implemented, meaning that a new D3.js user can create effects that would otherwise require years of experience.
-                                      For example, D3.js features built-in graph styles for anything from a simple pie chart to an interactive circular barplot.</p>					
+					<p class="page-about__text">D3.js visualizations are created entirely using JavaScript.
+						This allows frontend developers to add advanced data visualization to their interfaces without
+						learning a new language. D3.js has built-in chart styles for everything from
+						a simple pie chart to an interactive pie chart.</p>					
 				</section>
 
 				<section class="page__about page-about">
@@ -201,16 +190,10 @@
 				<section class="page__set-up page-setup">
 					<h2 class="page-setup__title">D3.js Set up</h2>
 					<p class="page-setup__text">
-						You’ll have to set up a D3.js environment before you get hands-on. The four components of a D3.js environment are the D3 library, a web server, a text editor, and a web browser.
-						You can use the D3 library by linking it directly to your HTML page from the Content Delivery Network (CDN). Using CDN will allow you to work with D3 without downloading the source code.				
-					</p>					
-				</section>
-
-				<section class="page__set-up page-setup">
-					<h2 class="page-setup__title">D3.js Set up</h2>
-					<p class="page-setup__text">
-						Include D3 by entering the CDN url for D3 in your <span class="code">head</span> section: <img class='code-img' src="./assets/code.JPG">
-					</p>					
+								You can use the D3 library by linking it directly to your HTML page from the Content Delivery Network.
+								Using CDN will allow you to work with D3 without downloading the source code:
+					</p>
+					<img class='code-img' src="./assets/code.JPG">					
 				</section>
 
 				<section class="page__components page-components">
@@ -233,7 +216,7 @@
 				</section>
 
 				<section class="page__selection page-selection">
-					<h2 class="page-selection__title"><span>Select</span><span class="page-selection__brackets">()</span></h2>
+					<h2 class="page-selection__title">Select()</h2>
 					<p class="page-selection__text">
 						The select() method is used to select a single instance of a given HTML tag. If multiple instances of the selected tag are present, then it will select the first element only.
 					</p>
@@ -246,9 +229,9 @@
 
 
 					<section class="page__selection page-selection">
-						<h2 class="page-selection__title"><span class="page-selection__title-all">SelectAll</span><span class="page-selection__brackets-all">()</span></h2>
+						<h2 class="page-selection__title">SelectAll()</h2>
 						<p class="page-selection__text">
-							The other method for selection is selectAll() which allows you to select multiple instances of an HTML tag. If multiple instances are present, it will select all of them. First, we select all text under the div tag using the selectAll() method. Then, we then use the style() method to add style to selected text.
+							The other method for selection is selectAll() which allows you to select multiple instances of an HTML tag. If multiple instances are present, it will select all of them. First, we select all p tags using the selectAll() method. Then, we then use the style() method to add style to selected text.
 						</p>
 						<div class="page-selection__wrapper">
 							<div class="page-selection__image">
@@ -273,7 +256,7 @@
 					
 
 					<section class="page__text page-text">
-						<h2 class="page-text__title"><span>text</span><span class="page-text__brackets">()</span></h2>
+						<h2 class="page-text__title">text()</h2>
 						<p class="page-text__text">
 							The text() method manipulates DOM elements and is generally used to add or modify the text inside DOM elements. We first use the select() method to select div elements. Then we use the text() method to add our text to the div element.
 						</p>
@@ -281,7 +264,7 @@
 					</section>
 
 					<section class="page__text page-text">
-						<h2 class="page-text__title"><span>append</span><span class="page-text__brackets">()</span></h2>
+						<h2 class="page-text__title">append()</h2>
 						<p class="page-text__text">
 							The append() method is used to add a new HTML element the selected element. We use the append() method to add a new p element in div element. Then, we have added the text, “Bye” using the text() method.
 						</p>
@@ -289,36 +272,57 @@
 					</section>
 
 					<section class="page__text page-text">
-						<h2 class="page-text__title"><span>remove</span><span class="page-text__brackets">()</span></h2>
+						<h2 class="page-text__title">remove()</h2>
 						<p class="page-text__text">
-							The remove() method is used to remove a selected HTML element. The select() method selects the first div element. Then, we use the remove() method to remove the selected element. By the end, only the second div element is shown.
+							The remove() method is used to remove a selected HTML element. The select() method selects the first div element. Then we use the remove() method to remove the selected element. By the end, only the second div element is shown.
 						</p>
 						<div class="page-text__img-wrapper"><div class="page-text__img"><img class="page-text__img-text" src="./assets/remove.gif" alt=""></div></div>
 					</section>
 
 					<section class="page__text page-text">
-						<h2 class="page-text__title"><span>style</span><span class="page-text__brackets">()</span></h2>
+						<h2 class="page-text__title">style()</h2>
 						<p class="page-text__text">
-							D3.js provides the style() method to set the style of selected DOM elements. Style is set in a format similar to CSS but can only change one attribute at a time. The first parameter of style is always the attribute you want to edit and the second parameter is the new value. style() method can only change a single attribute
+							D3.js provides the style() method to set the style of selected DOM elements. The first parameter of style is always the attribute you want to edit and the second parameter is the new value. style() method can only change a single attribute.
 						</p>
 						<div class="page-text__img-wrapper"><div class="page-text__img"><img class="page-text__img-text" src="./assets/style.JPG" alt=""></div></div>
 					</section>
 
 					<section class="page__text page-text">
-						<h2 class="page-text__title"><span>attr</span><span class="page-text__brackets">()</span></h2>
+						<h2 class="page-text__title">attr()</h2>
 						<p class="page-text__text">
 							Instead of calling style() twice, we can call attr() once. The attr() method links your element to a CSS style sheet and applies the sheet’s settings to any selected elements. It is also used to define the attributes of a geometric figure.
 						</p>
 						<div class="page-text__img-wrapper"><div class="page-text__img"><img class="page-text__img-text" src="./assets/attr.gif" alt=""></div></div>
 					</section>
 
-			
+					<section class="page__text page-text">
+						<h2 class="page-text__title">What is SVG?</h2>
+						<p class="page-components__text">
+							<ul class="page-components__list" id="list">
+								<li class="page-components__list-item">SVG is an image that is text-based.</li>
+								<li class="page-components__list-item">SVG is similar in structure to HTML</li>
+								<li class="page-components__list-item">SVG sits in the DOM</li>
+								<li class="page-components__list-item">SVG properties can be specified as attributes</li>
+								<li class="page-components__list-item">SVG should have absolute positions relative to the origin (0, 0)</li>
+							</ul>
+						</p>						
+					</section>
 
-				<section class="page__example page-example" id="sect2">
-					<h2 class="page-example__title">EXAMPLE</h2>
-					<p class="page-example__text">There's no theme included, so it will fall back on browser defaults.</p>
-					<svg class="bubleCharts"></svg>
-				</section>
+					<section class="page__text page-text">
+						<h2 class="page-text__title">Create SVG with D3.js</h2>
+						<img src="./assets/svg.gif" alt="" style="width: 100%;">
+					</section>
+
+					<section class="pages__title title">
+						<h2>Simple example</h2>
+						<div class="bar"></div>						
+					</section>
+
+					<section class="pages__title title">						
+						<img src="./assets/bar.gif" alt="">						
+					</section>
+
+				
 			</div>
 		</div>
 
@@ -329,105 +333,40 @@
 
 		<script src="js/d3.min.js"></script>
 		<script type="text/javascript">
-			//------ code to show D3 Bar Chart on First Slide-------
-/// d3.selectAll('p').style('color', 'blue')
+const data = [12,31,22,17,25,18,29,14,9];
 
-			var data = [44, 28, 15, 16, 23, 5];
-			var width = 420,
-			    barHeight = 20;
+const width = 450;
+const height = 200;
 
-			var x = d3.scale.linear()
-			    .domain([0, d3.max(data)])
-			    .range([0, width]);
+const svg = d3.select('.bar')
+							.append('svg')
+							.attr('width', width)
+							.attr('height', height)
+								
+svg.selectAll('rect')
+	 .data(data)
+	 .enter()
+	 .append('rect')
+	 .attr('x', (d, i) => i * 50)
+	 .attr('y', (d, i) => height - 5 * d)
+	 .attr('width', 25)
+	 .attr('height', (d, i)=> d * 5)
+	 .attr('fill', 'navy')
+	 .attr('class', 'bar')
+	 .append('title')
+	 .text((d)=> d)				 
+	 
+svg.selectAll('text')
+	 .data(data)
+	 .enter()
+	 .append('text')
+	 .attr('class', 'text-bar')
+	 .text((d)=> d)	 
+	 .attr('x', (d, i) => i * 50)
+	 .attr('y', (d, i) => height - (d * 5 + 3))
+	 			
 
-			var chart = d3.select(".chart")
-			    .attr("width", width)
-			    .attr("height", barHeight * data.length);
-
-			var bar = chart.selectAll("g")
-			    .data(data)
-			  	.enter().append("g")
-			    .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
-
-			bar.append("rect")
-			    .attr("width", x)
-			    .attr("height", barHeight - 1);
-
-			bar.append("text")
-			    .attr("x", function(d) { return x(d) - 3; })
-			    .attr("y", barHeight / 2)
-			    .attr("dy", ".35em")
-			    .text(function(d) { return d; });
-		// 
-		var chart2 = d3.select(".chart2")
-		.attr("width", width)
-			    .attr("height", barHeight * data.length);
-
-			var bar2 = chart2.selectAll("g")
-			    .data(data)
-			  .enter().append("g")
-			    .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
-
-			bar2.append("rect")
-			    .attr("width", x)
-			    .attr("height", barHeight - 1);
-
-			bar2.append("text")
-			    .attr("x", function(d) { return x(d) - 3; })
-			    .attr("y", barHeight / 2)
-			    .attr("dy", ".35em")
-			    .text(function(d) { return d; });
 			
-
-
-			//---Code below will show Bubble Charts on the secon Slide -------
-			var diameter = 560,
-		    	format = d3.format(",d"),
-		    	color = d3.scale.category20c();
-
-			var bubble = d3.layout.pack()
-			    .sort(null)
-			    .size([diameter, diameter])
-			    .padding(1.5);
-
-			var svg = d3.select(".bubleCharts")
-			    .attr("width", diameter)
-			    .attr("height", diameter)
-			    .attr("class", "bubble");
-
-			d3.json("flare.json", function(error, root) {
-			  var node = svg.selectAll(".node")
-			      .data(bubble.nodes(classes(root))
-			      .filter(function(d) { return !d.children; }))
-			    .enter().append("g")
-			      .attr("class", "node")
-			      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-
-			  node.append("title")
-			      .text(function(d) { return d.className + ": " + format(d.value); });
-
-			  node.append("circle")
-			      .attr("r", function(d) { return d.r; })
-			      .style("fill", function(d) { return color(d.packageName); });
-
-			  node.append("text")
-			      .attr("dy", ".3em")
-			      .style("text-anchor", "middle")
-			      .text(function(d) { return d.className.substring(0, d.r / 3); });
-			});
-
-			// Returns a flattened hierarchy containing all leaf nodes under the root.
-			function classes(root) {
-			  var classes = [];
-			  function recurse(name, node) {
-			    if (node.children) node.children.forEach(function(child) { recurse(node.name, child); });
-			    else classes.push({packageName: name, className: node.name, value: node.size});
-			  }
-			  recurse(null, root);
-			  return {children: classes};
-			}
-
-			d3.select(self.frameElement).style("height", diameter + "px");
 		</script>
 </body>
 </html>
